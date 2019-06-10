@@ -1,86 +1,75 @@
 /*! Code Prettify Material Theme | MIT License | github.com/Richienb/code-prettify-material-theme
 
+@font-face
+  font-family: "Fira Code"
+  font-style: normal
+  font-weight: 400
+  src: local("Fira Code"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/woff2/FiraCode-Regular.woff2") format("woff2"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/woff/FiraCode-Regular.woff") format("woff"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/ttf/FiraCode-Regular.ttf") format("truetype"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/otf/FiraCode-Regular.otf") format("opentype"), url("https://cdn.jsdelivr.net/npm/firacode@1.206.0/distr/eot/FiraCode-Regular.eot") format("embedded-opentype")
+
+// Base prettyprint class
 .prettyprint
-  background: #ffffff
-  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace
+  background-color: #eee
+  border-radius: 4px
+  padding: 12px
+  line-height: 1.4
+  overflow: auto
+  font-family: "Fira Code", Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace
   border: 0 !important
 
-.pln
-  color: #4d4d4c
+  // Set class "linenums" for line numbers
+  li
+    &.L0, &.L1, &.L2, &.L3, &.L4, &.L5, &.L6, &.L7, &.L8, &.L9
+      list-style-type: decimal
+      margin-left: 2rem
 
-/* Specify class=linenums on a pre to get line numbering
+  // Plain text
+  .pln
+    color: #000000
+    
+  // String content
+  .str
+    color: #0D904F
 
-ol.linenums
-  margin-top: 0
-  margin-bottom: 0
-  color: #8e908c
+  // Keyword
+  .kwd
+    color: #3B78E7
 
-li
-  &.L0, &.L1, &.L2, &.L3, &.L4, &.L5, &.L6, &.L7, &.L8, &.L9
-    padding-left: 1em
-    background-color: #ffffff
-    list-style-type: decimal
+  // Comment
+  .com
+    color: #999999
 
-/* string content
+  // Type name
+  .typ
+    color: #3E61A2
 
-.str
-  color: #0D904F
+  // Literal value
+  .lit
+    color: #E74C3C
 
-/* keyword
+  // Punctuation, lisp open bracket, lisp close bracket
+  .pun, .opn, .clo
+    color: #000000
 
-.kwd
-  color: #3B78E7
+  // Markup tag name
+  .tag
+    color: #3B78E7
 
-/* comment
+  // Markup attribute name
+  .atn
+    color: #3E61A2
 
-.com
-  color: #999999
+  // Markup attribute value
+  .atv
+    color: #C2185B
 
-/* type name
+  // Declaration
+  .dec
+    color: #3B78E7
 
-.typ
-  color: #3E61A2
+  // Variable name
+  .var
+    color: #3E61A2
 
-/* literal value
-
-.lit
-  color: #E74C3C
-
-/* punctuation
-
-/* lisp open bracket
-
-/* lisp close bracket
-
-.pun, .opn, .clo
-  color: #000000
-
-/* markup tag name
-
-.tag
-  color: #3B78E7
-
-/* markup attribute name
-
-.atn
-  color: #3E61A2
-
-/* markup attribute value
-
-.atv
-  color: #C2185B
-
-/* declaration
-
-.dec
-  color: #3B78E7
-
-/* variable name
-
-.var
-  color: #3E61A2
-
-/* function name
-
-.fun
-  color: #C2185B
+  // Function name
+  .fun
+    color: #C2185B
